@@ -1,16 +1,29 @@
-# React + Vite
+# Student Dashboard Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A dynamic React + Vite application built to manage a database of students. This project demonstrates core React concepts including state management, conditional rendering, controlled forms, component composition, and error handling.
 
-Currently, two official plugins are available:
+## Features Implemented
+- **Lifting State Up**: Main student list state is managed in `App.jsx` and passed down via props.
+- **Dynamic Navbar**: Displays the total count of students in real-time.
+- **Conditional Rendering**: Implements and visualizes 3 separate JSX approaches (Ternary, Logical `&&`, and IIFE) for status monitoring, and 3 control flows (if...else, switch, ternary) for batch sizing classifications.
+- **Controlled Forms**: Intercepts form submit payloads with `preventDefault()` to add students smoothly without page refreshes.
+- **Component Composition**: Uses the `<StudentList>` wrapper to pass student cards dynamically via the `children` prop.
+- **Error Boundaries**: Catches component runtime exceptions within `StudentCard` and serves an isolated Fallback UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Project Structure
+```text
+student-dashboard/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ErrorFallback.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── StudentCard.jsx
+│   │   ├── StudentForm.jsx
+│   │   └── StudentList.jsx
+│   ├── data/
+│   │   └── students.js
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── README.md
